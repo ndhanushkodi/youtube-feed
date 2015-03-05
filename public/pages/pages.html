@@ -1,0 +1,22 @@
+<!-- <p>this is pages</p>
+<div>{{msg}}</div> -->
+<div class='pages'>
+	<div class = "background-img">
+		<img src = "images/aa949330-smush-more-party.jpg">
+	</div>
+
+	<div class = "main-content">
+		<h1>All Party Themes</h1>
+		<br>
+		<div ng-repeat="page in pages">
+			<div class="col-sm-12 page-name">
+		            <div class = "col-md-6"><a href="#pages/{{page._id}}">
+		            	{{$index + 1}}. {{page.name}}
+		            </a></div>
+		            <div class = "col-md-6 dateUpdated"><p>Last Updated: {{ page.dateAdded | date : "h:mm a MMM d yyyy"}}</p></div>
+		          </div>
+		    </div><!-- /.col-sm-4 -->
+		</div>
+	</div>
+
+</div>

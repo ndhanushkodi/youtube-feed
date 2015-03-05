@@ -1,0 +1,74 @@
+.home .background-img img{
+	height: 100vh;
+}	
+
+.home .container {
+	position: absolute;
+	top:18vh;
+	height: 74vh;
+	width: 84%;
+	margin-right: 8%;
+	margin-left: 8%;
+	background-color: #ddd;
+	opacity: .8;
+	border-radius:1rem;
+}
+
+.home .main-blurb {
+	position: absolute;
+	top:31vh;
+	text-align: center;
+	width: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+.home button {
+	border:none;
+	background:none;
+	box-shadow: none;
+	margin:0;
+	padding: 0;
+}
+
+.home input:active, .home input:focus {
+	border:none;
+	outline: none;
+}
+
+.home .search-field {
+	width: 20rem;
+	border:none;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 2rem;
+}
+
+.home h1 {
+	font-size: 3rem;
+}
+
+.home a:hover {
+	text-decoration: none;
+}
+
+@media only screen and (min-width: 63em) {
+	.home .background-img img{
+	width: 100%;
+	}	
+
+	.home h1 {
+		font-size: 4.75rem;
+	}
+
+	.home .main-blurb {
+	position: absolute;
+	top:31vh;
+	text-align: center;
+	}
+
+	.home .search-field {
+	width: 33rem;
+	}
+}
+

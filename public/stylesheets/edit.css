@@ -1,0 +1,27 @@
+.edit {
+	position: absolute;
+	top:11vh;
+	text-align: center;
+	width: 84%;
+	margin-left: 8%;
+	margin-right: 8%;
+}
+
+.edit #editForm input {
+	margin: 1rem;
+	padding: 1rem;
+	width: 29rem;
+	border-radius: .5rem;
+	word-wrap:break-word;
+}
+
+.edit #editForm input:focus {
+	outline: none;
+}
+
+.edit #editForm button {
+	padding:1rem;
+	border-radius: .5rem;
+}
+
+

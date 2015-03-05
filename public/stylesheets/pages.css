@@ -1,0 +1,66 @@
+.pages {
+	position:absolute;
+	width:100%;
+}
+
+.pages .background-img img{
+	position: fixed;
+	height: 100vh;
+}	
+
+.pages .main-content {
+	position: absolute;
+	top:15vh;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	text-align: center;
+	padding-bottom:4rem;
+}
+
+
+.pages h1 {
+	color:#eee;
+	font-size: 3.5rem;
+}
+
+.pages a {
+	text-decoration: none;
+	color:#111;
+	font-size: 1.75rem;
+}
+
+.pages a:hover {
+	text-decoration: none;
+	color:#111;
+}
+
+.pages .page-name {
+	background-color: #eee;
+	margin: 1rem;
+	padding-left: 2rem;
+	padding-right:1.25rem;
+	padding-top:1.25rem;
+	padding-bottom:1.25rem;
+	border-radius: 1rem;
+	text-align: left;
+}
+
+.pages .page-name:hover {
+	background-color: #bbb;
+	cursor:pointer;
+}
+
+.pages .dateUpdated {
+	text-align:right;
+}
+
+@media only screen and (min-width: 50em) {
+	.pages .background-img img{
+	width: 100%;
+	}
+
+	.pages h1 {
+	font-size: 5.5rem;
+}
+}

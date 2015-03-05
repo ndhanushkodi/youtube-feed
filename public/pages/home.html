@@ -1,0 +1,19 @@
+<div class = "home">
+	<div class = "background-img">
+		<img src="images/aa949330-smush-party-background.jpg">
+	</div>
+	<div class = "container"></div>
+	<div class = "main-blurb">
+		<h4>Your source for party themes, costume ideas, party games, and more!</h4>
+		<br>
+		<h1><strong>What kind of party are you throwing?</strong></h1>
+		<br>
+		<form>
+			<input type = "text" placeholder = "Search by theme..." ng-model = searchData.query class = "search-field">
+			<button type = "submit" ng-click = "searchPage()" class = "btn-lg"><span class = "glyphicon glyphicon-search search-btn"></span></button>
+		</form>
+		<div>{{alertMessage}}</div>
+		<br>
+		<h4> Or view all themes <a href="#pages/">here</a></h4>
+	</div>
+</div>
