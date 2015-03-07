@@ -1,13 +1,28 @@
+/*
+	Allows user to add new video to the db
+*/
+
 /* 
 	Allows user to add a new page to the wiki
 */
 
 var mongoose = require('mongoose');
-var models = require('../models/topicModel');
+var models = require('../models/TagVideoUserModels');
 
 var routes = {};
 
-var Topic = models.Topic;
+var Video = models.Video;
+
+routes.addVideo = function(req,res){
+	/*
+	var title = req.body.title;
+	var description = req.body.description;
+	var url = req.body.url;
+	var tags = req.body.tags; 
+	*/
+
+	
+}
 
 /*form data comes in the req.body and this function 
 saves the new wiki data to the database*/
