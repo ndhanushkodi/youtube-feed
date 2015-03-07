@@ -12,7 +12,7 @@ var videoSchema = mongoose.Schema({
 	title: String,
 	description: String,
 	url: String,
-	tags: [String]
+	tags: [tagSchema]
 });
 
 var userSchema = mongoose.Schema({
