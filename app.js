@@ -1,5 +1,6 @@
 //REQUIRES
 var express = require("express");
+var session = require('express-session');
 var path = require("path");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -10,7 +11,7 @@ var mongoose = require("mongoose");
 var index = require("./routes/index");
 var edit = require("./routes/edit");
 var add = require("./routes/add");
-var pages = require("./routes/pages");
+var feed = require("./routes/feed");
 
 
 var app = express();
@@ -26,15 +27,17 @@ app.use(express.static(path.join(__dirname, "public")));
 
 
 //API routes that angular will use to get and post data 
-app.get("/api/pages", pages.getPages);
+app.get("/api/feed", feed.dispFeed);
 
-app.get("/api/pages/:topic", pages.dispTopic);
+//app.get("/api/pages/:topic", pages.dispTopic);
 
-app.post("/api/edit/:topic", edit.editTopic);
+//app.post("/api/edit/:topic", edit.editTopic);
 
-app.post("/api/addTopic", add.addTopic);
+app.post("/api/editTags", edit.editTags);
 
-app.post("/api/search", index.search);
+app.post("/api/addVideo", add.addVideo);
+
+//app.post("/api/search", index.search);
 
 
 mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/test');

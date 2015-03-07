@@ -3,11 +3,12 @@
 */
 
 var mongoose = require('mongoose');
-var models = require('../models/topicModel');
+var models = require('../models/TagVideoUserModels');
 
 var routes = {};
 
-var Topic = models.Topic;
+var Video = models.Video;
+var User = models.User;
 
 routes.getPages = function(req, res) {
 

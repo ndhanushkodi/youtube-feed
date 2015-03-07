@@ -21,6 +21,26 @@ routes.addVideo = function(req,res){
 	var tags = req.body.tags; 
 	*/
 
+	var title = "Test Video";
+	var description = "this is a test video haha";
+	var url = "https://www.youtube.com/watch?v=abfwHqKQsSY";
+	var tags = ["Health", "Music"];
+
+
+	var newVideo = new Video({title:title, 
+		description:description, url:url,
+		tags:tags});
+
+	newVideo.save(function(err){
+		if(err){
+			console.error('Cant add video');
+			res.status(500).send("Couldn't add video");
+		}
+		res.send(newVideo);
+	});
+
+	
+
 	
 }
 

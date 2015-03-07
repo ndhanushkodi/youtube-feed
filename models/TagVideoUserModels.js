@@ -12,13 +12,13 @@ var videoSchema = mongoose.Schema({
 	title: String,
 	description: String,
 	url: String,
-	tags: [tagSchema]
+	tags: [String]
 });
 
 var userSchema = mongoose.Schema({
 	username: String,
 	fbid: String,
-	tags: [tagSchema]
+	tags: [String]
 });
 
 var Tag = mongoose.model('Tag', tagSchema);
