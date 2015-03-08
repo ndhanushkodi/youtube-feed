@@ -1,5 +1,5 @@
 /* 
-	Lists all current pages in the db 
+	Send all video data to front end 
 */
 
 var mongoose = require('mongoose');
@@ -9,6 +9,12 @@ var routes = {};
 
 var Video = models.Video;
 var User = models.User;
+
+routes.dispFeed = function(req,res){
+
+	// Video.find({}, function(err, topics))
+
+}
 
 routes.getPages = function(req, res) {
 
