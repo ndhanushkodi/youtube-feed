@@ -1,0 +1,14 @@
+<div class = 'add'>
+<h1>Add a Party Theme!</h1>
+<p>Please provide a working link for the image field</p>
+<form name = "addForm" novalidate ng-click = "hideMsg()">
+	<input type = "text" name = "name" placeholder = "Name" ng-model = formData.name required><br>
+	<span style="color:red" ng-show="addForm.name.$dirty && addForm.name.$invalid"><span ng-show= "addForm.name.$error.required" ng-hide = "msg">A name is required!<br></span></span>
+	<input id='description' type = "text" placeholder = "Description" ng-model = formData.description><br>
+	<input type = "text" placeholder = "Image Link" ng-model = formData.img><br>
+	<input type = "text" placeholder = "Rules" ng-model = formData.rules><br>
+	<button type = "submit" ng-disabled="addForm.name.$invalid" ng-click = "addPage()">Add!</button>
+</form><Br>
+<div>{{msg}}</div>
+
+</div>
