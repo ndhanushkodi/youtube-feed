@@ -10,11 +10,11 @@ LOGIN
 */
 
 var mongoose = require('mongoose');
-var models = require('../models/topicModel');
+//var models = require('../models/topicModel');
 
 var routes = {};
 
-var Topic = models.Topic;
+//var Topic = models.Topic;
 
 /* This searches existing pages for the searched page.
 The query is sent in req.body. */

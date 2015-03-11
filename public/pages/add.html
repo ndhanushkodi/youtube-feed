@@ -1,0 +1,14 @@
+<div class = 'add'>
+<h1>Add a Video!</h1>
+
+<form name = "addForm" novalidate ng-click = "hideMsg()">
+	<input type = "text" name = "title" placeholder = "Title" ng-model = formData.title required><br>
+	<span style="color:red" ng-show="addForm.title.$dirty && addForm.title.$invalid"><span ng-show= "addForm.title.$error.required" ng-hide = "msg">A title is required!<br></span></span>
+	<input id='description' type = "text" placeholder = "Description" ng-model = formData.description><br>
+	<input type = "text" placeholder = "url" ng-model = formData.url><br>
+	<input type = "text" placeholder = "Tag" ng-model = formData.tags><br>
+	<button type = "submit" ng-disabled="addForm.title.$invalid" ng-click = "addVideo()">Add!</button>
+</form><Br>
+<div>{{msg}}</div>
+
+</div>

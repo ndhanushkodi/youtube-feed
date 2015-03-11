@@ -3,11 +3,11 @@
 */
 
 var mongoose = require('mongoose');
-var models = require('../models/topicModel');
+//var models = require('../models/topicModel');
 
 var routes = {};
 
-var Topic = models.Topic;
+//var Topic = models.Topic;
 
 routes.editTopic = function(req, res) {
 // Find an existing page and make edit based on user input

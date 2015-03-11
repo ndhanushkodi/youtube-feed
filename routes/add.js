@@ -14,17 +14,17 @@ var routes = {};
 var Video = models.Video;
 
 routes.addVideo = function(req,res){
-	/*
+	
 	var title = req.body.title;
 	var description = req.body.description;
 	var url = req.body.url;
 	var tags = req.body.tags; 
-	*/
+	
 
-	var title = "Test Video";
-	var description = "this is a test video haha";
-	var url = "https://www.youtube.com/watch?v=abfwHqKQsSY";
-	var tags = ["Health", "Music"];
+	// var title = "Test Video";
+	// var description = "this is a test video haha";
+	// var url = "https://www.youtube.com/watch?v=abfwHqKQsSY";
+	// var tags = "Health";
 
 
 	var newVideo = new Video({title:title, 
