@@ -90,8 +90,10 @@ function(accessToken, refreshToken, profile, done) {
 
 //ROUTES
 app.get("/api/", ensureAuthenticated, feed.dispFeed);
-app.get("/api/auth", feed.showLogin);
+//app.get("/", function(req,res){res.render("hi");});
+app.get("/api/log", feed.showLogin);
 app.post("/api/addVideo", add.addVideo);
+app.post("/login", feed.login)
 
 
 app.post('/api/login',
@@ -121,5 +123,5 @@ function ensureAuthenticated(req, res, next) {
 	console.log(req.passport);
 if (req.isAuthenticated()) { return next(); }
 console.log('not logged in');
-res.redirect('/api/auth')
+res.redirect('/api/log')
 }

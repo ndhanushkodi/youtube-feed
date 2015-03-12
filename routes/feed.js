@@ -11,7 +11,7 @@ var Video = models.Video;
 var User = models.User;
 
 routes.dispFeed = function(req,res){
-
+	console.log(req.user._json.first_name);
 	Video.find({}, function(err, videos){
 		if(err){
 			console.error("Couldn't find the videos", err);
@@ -51,7 +51,7 @@ routes.login = function(req, res){
 					req.session.save(function(){
 						console.log('NEW USER ALERT');
 						console.log(newUser);
-						res.redirect('/api/');
+						res.redirect('/#/feed');
 					});
 					
 					
@@ -65,7 +65,7 @@ routes.login = function(req, res){
 				console.log("existing user");
 				console.log(user);
 				console.log(req.user);
-				res.redirect('/');
+				res.redirect('/#/feed');
 			});
 			
 		}

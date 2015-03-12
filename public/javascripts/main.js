@@ -7,7 +7,7 @@ var youFeed = angular.module('youFeed', ['ngRoute']);
 
 youFeed.config(function($routeProvider) {
     $routeProvider
-        .when('/', {
+        .when('/feed', {
             templateUrl : '../pages/feed.html',
             controller  : 'feedController'
         })
