@@ -6,13 +6,30 @@
 	</div>
 
 	<div class = "main-content">
+		<style>
+		input[type='checkbox']{
+			-webkit-appearance:none;
+    		width:30px;
+		    height:30px;
+		    background:white;
+		    border-radius:5px;
+		    border:2px solid #555;
+		    margin-left: 30px;
+
+		}
+		input[type='checkbox']:checked {
+    		background: #abd;
+		}
+		</style>
 
 		<h1>Video Feed</h1>
 		<br>
-		<input type="checkbox" ng-model="Health" ng-init="Health=false" />
-		<input type="checkbox" ng-model="Music" ng-init="Music=false" />
+		<input id='musicc'type="checkbox" ng-model="Music" ng-init="Music=false" >Music</input>
+		<input id='healthc'type="checkbox" ng-model="Health" ng-init="Health=false" >Health</input>
+		<input id='newsc'type="checkbox" ng-model="News" ng-init="News=false" >News</input>
+		<input id='func'type="checkbox" ng-model="Fun" ng-init="Fun=false" >Fun</input>
 		
-		<div id="videoTag">this div</div>
+		<div id="videoTag"></div>
 		<div ng-repeat="video in musicvideos" ng-if="Music"	>
 			<div class="col-sm-12 page-name" >
 		            <div class = "col-md-6"><!-- <a href="#pages/{{page._id}}"> -->
@@ -36,6 +53,53 @@
 		    </div><!-- /.col-sm-4 -->
 
 		<div ng-repeat="video in healthvideos" ng-if="Health">
+			<div class="col-sm-12 page-name" >
+		            <div class = "col-md-6"><!-- <a href="#pages/{{page._id}}"> -->
+		            	<div id='title'>{{video.title}}</div>
+		            	
+		            	<div id ='description'>{{video.description}}</div>
+		            	
+		            	<!-- <iframe width="854" height="510" src={{video.url}} frameborder="0" allowfullscreen></iframe> -->
+		            	<!-- <embed src="{{url}}">
+		            	<video ng-src="{{url}}" controls></video> -->
+		            	
+		            	<br>
+		            	<a href={{video.url}}>Click to Play</a>
+		            	<br><br>
+		            	<div id='tag'>{{video.tagid.tags}}</div>
+		            	
+		            	<div id='user'>Posted by {{loggedInUser}}</div>
+		            <!-- </a> --></div>
+		            
+		          </div>
+		    </div><!-- /.col-sm-4 -->
+
+
+		<div ng-repeat="video in newsvideos" ng-if="News">
+			<div class="col-sm-12 page-name" >
+		            <div class = "col-md-6"><!-- <a href="#pages/{{page._id}}"> -->
+		            	<div id='title'>{{video.title}}</div>
+		            	
+		            	<div id ='description'>{{video.description}}</div>
+		            	
+		            	<!-- <iframe width="854" height="510" src={{video.url}} frameborder="0" allowfullscreen></iframe> -->
+		            	<!-- <embed src="{{url}}">
+		            	<video ng-src="{{url}}" controls></video> -->
+		            	
+		            	<br>
+		            	<a href={{video.url}}>Click to Play</a>
+		            	<br><br>
+		            	<div id='tag'>{{video.tagid.tags}}</div>
+		            	
+		            	<div id='user'>Posted by {{loggedInUser}}</div>
+		            <!-- </a> --></div>
+		            
+		          </div>
+		    </div><!-- /.col-sm-4 -->
+
+
+
+		<div ng-repeat="video in funvideos" ng-if="Fun">
 			<div class="col-sm-12 page-name" >
 		            <div class = "col-md-6"><!-- <a href="#pages/{{page._id}}"> -->
 		            	<div id='title'>{{video.title}}</div>

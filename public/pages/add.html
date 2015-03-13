@@ -10,7 +10,14 @@
 	<span style="color:red" ng-show="addForm.title.$dirty && addForm.title.$invalid"><span ng-show= "addForm.title.$error.required" ng-hide = "msg">A title is required!<br></span></span>
 	<input id='description' type = "text" placeholder = "Description" ng-model = formData.description><br>
 	<input type = "text" placeholder = "url" ng-model = formData.url><br>
-	<input type = "text" placeholder = "Tag" ng-model = formData.tags><br>
+	<!-- <input type = "text" placeholder = "Tag" ng-model = formData.tags> -->
+	<select ng-model = formData.tags>
+  	<option value="Music">Music</option>
+  	<option value="Health">Health</option>
+ 	<option value="News">News</option>
+  	<option value="Fun">Fun</option>
+	</select>
+	<br>
 	<button type = "submit" ng-disabled="addForm.title.$invalid" ng-click = "addVideo()">Add!</button>
 </form><Br>
 <div>{{msg}}</div>

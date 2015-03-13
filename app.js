@@ -16,7 +16,7 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 
 var auth = require("./routes/auth");
 var index = require("./routes/index");
-var edit = require("./routes/edit");
+
 var add = require("./routes/add");
 var feed = require("./routes/feed");
 

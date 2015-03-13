@@ -31,6 +31,10 @@ youFeed.controller('feedController', function($scope, $http) {
 			$scope.videos = data.videos;
 			$scope.loggedInUser = data.loggedInUser;
 
+			//I'M SORRY SORRY SORRY SORRY
+			//THIS IS SO BAD
+			//I JUST COULDN'T QUITE GET FILTERS WORKING
+			//SO I RESORTED TO SORTING VIDEOS IN THE CONTROLLER
  			$scope.musicvideos = [];
 			angular.forEach($scope.videos, function(video) {
 
@@ -50,6 +54,28 @@ youFeed.controller('feedController', function($scope, $http) {
     				console.log('tagged health');
     				console.log(video);
     				$scope.healthvideos = $scope.healthvideos.concat(video);
+    			}
+
+  			});
+
+  			$scope.newsvideos = [];
+			angular.forEach($scope.videos, function(video) {
+
+    			if(video.tagid.tags === 'News'){
+    				console.log('tagged news');
+    				console.log(video);
+    				$scope.newsvideos = $scope.newsvideos.concat(video);
+    			}
+
+  			});
+
+  			$scope.funvideos = [];
+			angular.forEach($scope.videos, function(video) {
+
+    			if(video.tagid.tags === 'Fun'){
+    				console.log('tagged fun');
+    				console.log(video);
+    				$scope.funvideos = $scope.funvideos.concat(video);
     			}
 
   			});

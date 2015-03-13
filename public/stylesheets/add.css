@@ -33,3 +33,8 @@
 	color:#ccc;
 	font-size: 4.5rem;
 }	
+.add select{
+	padding:1rem;
+	border-radius:.5rem;
+	width: 10rem;
+}
