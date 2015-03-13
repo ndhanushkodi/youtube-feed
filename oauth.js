@@ -1,11 +1,8 @@
 var ids = {
 facebook: {
- // clientID: process.env.FacebookID,
- // clientSecret: process.env.FacebookSecret,
- //callbackURL: process.env.callback || 
- clientID: "",
- clientSecret: "",
- callbackURL: 'http://localhost:3000/auth/facebook/callback'
+ clientID: process.env.FacebookID,
+ clientSecret: process.env.FacebookSecret,
+ callbackURL: process.env.callback || 'http://localhost:3000/auth/facebook/callback'
 },
 twitter: {
  consumerKey: 'get_your_own',
