@@ -3,7 +3,7 @@
 */
 
 
-var youFeed = angular.module('youFeed', ['ngRoute', 'App.filters']);
+var youFeed = angular.module('youFeed', ['ngRoute']);
 
 youFeed.config(function($routeProvider) {
     $routeProvider
@@ -29,8 +29,30 @@ youFeed.controller('feedController', function($scope, $http) {
 	$http.get('/api/')
 		.success(function(data){
 			$scope.videos = data.videos;
-			$scope.url = "https://www.youtube.com/embed/7-7knsP2n5w";
 			$scope.loggedInUser = data.loggedInUser;
+
+ 			$scope.musicvideos = [];
+			angular.forEach($scope.videos, function(video) {
+
+    			if(video.tagid.tags === 'Music'){
+    				console.log('tagged music');
+    				console.log(video);
+    				$scope.musicvideos = $scope.musicvideos.concat(video);
+    			}
+
+  			});
+  			
+
+  			$scope.healthvideos = [];
+			angular.forEach($scope.videos, function(video) {
+
+    			if(video.tagid.tags === 'Health'){
+    				console.log('tagged health');
+    				console.log(video);
+    				$scope.healthvideos = $scope.healthvideos.concat(video);
+    			}
+
+  			});
 			// $scope.videos = data;
 			// $scope.name = data[0].name;
 			// console.log("The name is " + data[0].name);
