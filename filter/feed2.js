@@ -1,27 +1,27 @@
-var App = angular.module('videoApp', ['ngResource', 'App.filters']);
+var App = angular.module('videoApp', ['App.filters']);
   App.controller('VideoCtrl', ['$scope', function ($scope) {
     $scope.selectedVideo = [];
 
     $scope.videoList = [{
-        id: 1,
+        
         tag: 'Health'
     }, {
-        id: 2,
+        
         tag: 'Science'
     }, {
-        id: 3,
+       
         tag: 'Politics'
     },  {
-        id: 4,
+        
         tag: 'Sports'
     },  {
-        id: 5,
+        
         tag: 'Business'
     },  {
-        id: 6,
+       
         tag: 'Travel'
     },  {
-        id: 7,
+     
         tag: 'Technology'
     }];
 
@@ -30,7 +30,6 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
         description: 'Software Engineer',
         url: 'this is 1',
         tagid: {
-            id: 1,
             tag: 'Health'
         }
     }, {
@@ -38,7 +37,6 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
         description: 'Database Administrator',
         url: 'this is 2',
         tagid: {
-            id: 3,
             tag: 'Politics'
         }
     }, {
@@ -46,7 +44,6 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
         description: 'Designer',
         url: 'this is 3',
         tagid: {
-            id: 2,
             tag: 'Science'
         }
     }, {
@@ -54,7 +51,6 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
         description: 'Front-End Developer',
         url: 'this is 4',
         tagid: {
-            id: 7,
             tag: 'Technology'
         }
     }, {
@@ -62,7 +58,6 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
         description: 'Network Engineer',
         url: 'this is 5',
         tagid: {
-            id: 3,
             tag: 'Politics'
         }
     }];
@@ -71,10 +66,10 @@ var App = angular.module('videoApp', ['ngResource', 'App.filters']);
     // if video selected, then add it to the selcted video vector
 
     $scope.setSelectedVideo = function () {
-        if (_.contains($scope.selectedVideo, this.tagid.id)) {
-            $scope.selectedVideo = _.without($scope.selectedVideo, this.tagid.id);
+        if (_.contains($scope.selectedVideo, this.tagid.tag)) {
+            $scope.selectedVideo = _.without($scope.selectedVideo, this.tagid.tag);
         } else {
-            $scope.selectedVideo.push(this.tagid.id);
+            $scope.selectedVideo.push(this.tagid.tag);
         }
     };
 
@@ -84,9 +79,9 @@ angular.module('App.filters', []).filter('videoFilter', [function () {
     return function (videos, selectedVideo) {
         if (!angular.isUndefined(videos) && !angular.isUndefined(selectedVideo) && selectedVideo.length > 0) {
             var tempVideos = [];
-            angular.forEach(selectedVideo, function (id) {
+            angular.forEach(selectedVideo, function (tag) {
                 angular.forEach(videos, function (video) {
-                    if (angular.equals(video.tagid.id, id)) {
+                    if (angular.equals(video.tagid.tag, tag)) {
                         tempVideos.push(video);
                     }
                 });

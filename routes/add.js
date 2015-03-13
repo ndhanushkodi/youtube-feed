@@ -18,7 +18,17 @@ routes.addVideo = function(req,res){
 	var title = req.body.title;
 	var description = req.body.description;
 	var url = req.body.url;
-	var tags = req.body.tags; 
+	var tagid = {};
+	tagid.tags = req.body.tags; 
+
+	var video_id = url.split('v=')[1];
+	var ampersandPosition = video_id.indexOf('&');
+	if(ampersandPosition != -1) {
+  		video_id = video_id.substring(0, ampersandPosition);
+	}
+	url = "https://www.youtube.com/embed/" + video_id;
+
+	console.log(url);
 	
 
 	// var title = "Test Video";
@@ -29,7 +39,7 @@ routes.addVideo = function(req,res){
 
 	var newVideo = new Video({title:title, 
 		description:description, url:url,
-		tags:tags});
+		tagid:tagid});
 
 	newVideo.save(function(err){
 		if(err){

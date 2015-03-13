@@ -24,3 +24,12 @@
 .add input:focus {
 	outline:none;
 }
+
+.add .background-img img{
+	position: fixed;
+	height: 100vh;
+}
+.add h1{
+	color:#ccc;
+	font-size: 4.5rem;
+}	

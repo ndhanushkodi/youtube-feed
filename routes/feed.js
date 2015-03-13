@@ -11,13 +11,16 @@ var Video = models.Video;
 var User = models.User;
 
 routes.dispFeed = function(req,res){
-	console.log(req.user._json.first_name);
+	console.log("hi" + req.user._json.first_name);
+	var render_info = {};
+	render_info.loggedInUser = req.user._json.first_name;
 	Video.find({}, function(err, videos){
 		if(err){
 			console.error("Couldn't find the videos", err);
 			res.status(500).send("Couldn't find the videos");
 		};
-		res.send(videos);
+		render_info.videos = videos;
+		res.send(render_info);
 	});
 
 }

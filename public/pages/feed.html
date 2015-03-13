@@ -1,18 +1,34 @@
 <!-- <p>this is pages</p>
 <div>{{msg}}</div> -->
 <div class='feed'>
-<!-- 	<div class = "background-img">
-		<img src = "images/aa949330-smush-more-party.jpg">
-	</div> -->
+	<div class = "background-img">
+		<img src = "http://wallemons.com/wp-content/uploads/2015/02/Solid-Color-Wallpaper.jpg">
+	</div>
 
 	<div class = "main-content">
+
 		<h1>Video Feed</h1>
 		<br>
-		<div ng-repeat="video in videos">
-			<div class="col-sm-12 page-name">
-		            <div class = "col-md-6"><a href="#pages/{{page._id}}">
-		            	{{$index + 1}}. {{video.title}}
-		            </a></div>
+		<input type="checkbox" ng-model="Health" ng-init="Health=true" />
+		<div id="videoTag">this div</div>
+		<div ng-repeat="video in videos" 	>
+			<div class="col-sm-12 page-name" ng-if='Health'>
+		            <div class = "col-md-6"><!-- <a href="#pages/{{page._id}}"> -->
+		            	<div id='title'>{{video.title}}</div>
+		            	
+		            	<div id ='description'>{{video.description}}</div>
+		            	
+		            	<!-- <iframe width="854" height="510" src={{video.url}} frameborder="0" allowfullscreen></iframe> -->
+		            	<!-- <embed src="{{url}}">
+		            	<video ng-src="{{url}}" controls></video> -->
+		            	
+		            	<br>
+		            	<a href={{video.url}}>Click to Play</a>
+		            	<br><br>
+		            	<div id='tag'>{{video.tagid.tags}}</div>
+		            	
+		            	<div id='user'>Posted by {{loggedInUser}}</div>
+		            <!-- </a> --></div>
 		            
 		          </div>
 		    </div><!-- /.col-sm-4 -->

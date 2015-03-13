@@ -20,20 +20,26 @@
 
 
 .feed h1 {
-	color:#eee;
+	color:#ccc;
 	font-size: 3.5rem;
 }
 
 .feed a {
 	text-decoration: none;
 	color:#111;
-	font-size: 1.75rem;
+	font-weight: bold;
+	/*font-size: 1.75rem;*/
 }
 
 .feed a:hover {
 	text-decoration: none;
-	color:#111;
+	color:#eee;
 }
+
+.feed #title{
+	font-size: 2.5rem;
+}
+
 
 .feed .page-name {
 	background-color: #eee;

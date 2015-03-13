@@ -10,7 +10,7 @@
 	margin-right: 8%;
 	margin-left: 8%;
 	background-color: #ddd;
-	opacity: .8;
+	opacity: .4;
 	border-radius:1rem;
 }
 
@@ -45,6 +45,7 @@
 }
 
 .home h1 {
+	color:#eee;
 	font-size: 3rem;
 }
 

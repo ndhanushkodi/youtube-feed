@@ -3,10 +3,14 @@
 */
 
 
-var youFeed = angular.module('youFeed', ['ngRoute']);
+var youFeed = angular.module('youFeed', ['ngRoute', 'App.filters']);
 
 youFeed.config(function($routeProvider) {
     $routeProvider
+    	.when('/', {
+            templateUrl : '../pages/home.html',
+            controller  : 'feedController'
+        })
         .when('/feed', {
             templateUrl : '../pages/feed.html',
             controller  : 'feedController'
@@ -19,16 +23,23 @@ youFeed.config(function($routeProvider) {
 });
 
 youFeed.controller('feedController', function($scope, $http) {
+
+
 	// Get all of the pages in the database
 	$http.get('/api/')
 		.success(function(data){
-			$scope.videos = data;
-			$scope.name = data[0].name;
-			console.log("The name is " + data[0].name);
+			$scope.videos = data.videos;
+			$scope.url = "https://www.youtube.com/embed/7-7knsP2n5w";
+			$scope.loggedInUser = data.loggedInUser;
+			// $scope.videos = data;
+			// $scope.name = data[0].name;
+			// console.log("The name is " + data[0].name);
 		})
 		.error(function(data) {
 			console.log("Error: " + data);
 		});
+
+
 	
 });
 
@@ -42,7 +53,7 @@ youFeed.controller('addController', function($scope, $http) {
 		$http.post('/api/addVideo', $scope.formData)
 			.success(function(data){
 				$scope.formData = {};
-				$scope.msg = "Congratulations! You have successfully added your party theme!";
+				$scope.msg = "Added your video";
 			})
 			.error(function(data) {
 			console.log("Error: " + data);
@@ -55,6 +66,23 @@ youFeed.controller('addController', function($scope, $http) {
 	};
 
 });
+
+angular.module('App.filters', []).filter('videoFilter', [function () {
+    return function (videos, selectedVideo) {
+        if (!angular.isUndefined(videos) && !angular.isUndefined(selectedVideo) && selectedVideo.length > 0) {
+            var tempVideos = [];
+            angular.forEach(selectedVideo, function (tag) {
+                angular.forEach(videos, function (video) {
+                    if (angular.equals(video.tagid.tag, tag)) {
+                        tempVideos.push(video);
+                    }
+                });
+            });
+            console.log(tempVideos)  // before the return 
+            return tempVideos;   // will show just tempVideos
+            }
+    };
+}]);
 
 // wikiParty.controller('byTopicController', function($scope, $http, $routeParams) {
 // 	// Get the page id from the url

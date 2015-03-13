@@ -1,0 +1,47 @@
+<!-- <p>this is pages</p>
+<div>{{msg}}</div> -->
+<div class='feed'>
+<!-- 	<div class = "background-img">
+		<img src = "images/aa949330-smush-more-party.jpg">
+	</div> -->
+
+	<div class = "main-content">
+		<h1>Video Feed</h1>
+		<br>
+		<li data-ng-repeat="tagid in videoList">
+                        <div class="checkboxFour">
+                            <input type="checkbox" data-ng-click="setSelectedVideo()" > <a>{{tagid.tag}} </a>
+                        </div >                      
+                    </li>
+
+
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th style="width:10%">#</th>
+                <th style="width:20%">Title</th>
+                <th style="width:40%">Description</th>
+                <th style="width:20%">Url</th>
+                <th style="width:30%">Tag</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="video in filtered = (videos | videoFilter:selectedVideo)">
+                <td>{{$index + 1}}</td>
+                <td><em>{{video.title}}</em></td>
+                <td>{{video.description}}</td>
+                <td>{{video.url}}</td>
+                <td>{{video.tagid.tags}}</td>
+                <td>{{loggedInUser}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+		</div>
+	</div>
+
+</div>
